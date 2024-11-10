@@ -37,7 +37,7 @@ function Sidebar() {
   };
 
   const handlePromoteClick = () => {
-    const websiteLink = "https://share-ride-eight.vercel.app/";
+    const websiteLink = "https://shareride-final-year-project.onrender.com/";
 
     navigator.clipboard.writeText(websiteLink);
     toast.success("Website link copied to clipboard! Share & promote now.");

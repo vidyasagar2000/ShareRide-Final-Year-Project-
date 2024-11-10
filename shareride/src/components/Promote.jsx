@@ -5,7 +5,7 @@ const Promote = () => {
   const [copied, setCopied] = useState(false);
 
   const handleCopyLink = () => {
-    const websiteLink = "https://share-ride-eight.vercel.app/";
+    const websiteLink = "https://shareride-final-year-project.onrender.com/";
     navigator.clipboard.writeText(websiteLink);
     setCopied(true);
     setTimeout(() => setCopied(false), 3000); // Reset the copied status after 3 seconds
@@ -88,7 +88,7 @@ const Promote = () => {
             <div className="copy-link-container">
               <input
                 type="text"
-                value="https://share-ride-eight.vercel.app/"
+                value="https://shareride-final-year-project.onrender.com/"
                 readOnly
                 className="copy-link-input"
               />
