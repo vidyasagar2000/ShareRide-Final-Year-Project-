@@ -6,6 +6,7 @@ import { useAuth } from "./AuthContext";
 const JourneyContext = createContext();
 
 // const BASE_URL = "http://localhost:3000/"; // Corrected the URL scheme
+const BASE_URL = "https://shareride-final-year-project-1.onrender.com/"; 
 // const BASE_URL = "/"; // Corrected the URL scheme
 
 function JourneyProvider({ children }) {
@@ -22,8 +23,8 @@ function JourneyProvider({ children }) {
     // console.log('token in authorisation:', `Bearer ${token}`);
 
     try {
-      // const response = await fetch(`${BASE_URL}journey/journey-requests`, {
-        const response = await fetch(`/journey/journey-requests`, {
+      const response = await fetch(`${BASE_URL}journey/journey-requests`, {
+        // const response = await fetch(`/journey/journey-requests`, {
 
         method: "GET",
         headers: {
@@ -57,8 +58,8 @@ function JourneyProvider({ children }) {
     // console.log('token in authorisation:', `Bearer ${token}`);
 
     try {
-      // const response = await fetch(`${BASE_URL}journey/my-journey`, {
-        const response = await fetch(`/journey/my-journey`, {
+      const response = await fetch(`${BASE_URL}journey/my-journey`, {
+        // const response = await fetch(`/journey/my-journey`, {
 
         method: "GET",
         headers: {
@@ -94,8 +95,8 @@ function JourneyProvider({ children }) {
     // console.log('create Journey fetch');
     try {
       const token = localStorage.getItem("token");
-      // const response = await fetch(`${BASE_URL}journey/journey-request`, {
-        const response = await fetch(`/journey/journey-request`, {
+      const response = await fetch(`${BASE_URL}journey/journey-request`, {
+        // const response = await fetch(`/journey/journey-request`, {
 
         method: "POST",
         headers: {
@@ -133,8 +134,8 @@ function JourneyProvider({ children }) {
     setIsLoading(true);
     try {
       const token = localStorage.getItem("token");
-      // const response = await fetch(`${BASE_URL}journey/join-journey`, {
-        const response = await fetch(`/journey/join-journey`, {
+      const response = await fetch(`${BASE_URL}journey/join-journey`, {
+        // const response = await fetch(`/journey/join-journey`, {
 
         method: "POST",
         headers: {
@@ -163,8 +164,8 @@ function JourneyProvider({ children }) {
     setIsLoading(true);
     try {
       const token = localStorage.getItem("token");
-      // const response = await fetch(`${BASE_URL}journey/journey-exit`, {
-        const response = await fetch(`/journey/journey-exit`, {
+      const response = await fetch(`${BASE_URL}journey/journey-exit`, {
+        // const response = await fetch(`/journey/journey-exit`, {
 
         method: "POST",
         headers: {
@@ -201,8 +202,8 @@ function JourneyProvider({ children }) {
         body: JSON.stringify({ _id }),
       };
   
-      // const response = await fetch(`${BASE_URL}journey/journeyCancel`, option);
-      const response = await fetch(`/journey/journeyCancel`, option);
+      const response = await fetch(`${BASE_URL}journey/journeyCancel`, option);
+      // const response = await fetch(`/journey/journeyCancel`, option);
 
   
       if (!response.ok) {
@@ -232,8 +233,8 @@ function JourneyProvider({ children }) {
         body: JSON.stringify({ _id }),
       };
   
-      // const response = await fetch(`${BASE_URL}journey/restartJourney`, option);
-      const response = await fetch(`/journey/restartJourney`, option);
+      const response = await fetch(`${BASE_URL}journey/restartJourney`, option);
+      // const response = await fetch(`/journey/restartJourney`, option);
 
   
       if (!response.ok) {
@@ -255,8 +256,8 @@ function JourneyProvider({ children }) {
     setIsLoading(true);
     try {
       const token = localStorage.getItem("token");
-      // const response = await fetch(`${BASE_URL}journey/delete-journey`, {
-        const response = await fetch(`/journey/delete-journey`, {
+      const response = await fetch(`${BASE_URL}journey/delete-journey`, {
+        // const response = await fetch(`/journey/delete-journey`, {
 
         method: "POST",
         headers: {
@@ -301,8 +302,8 @@ function JourneyProvider({ children }) {
         body: JSON.stringify({ users }),
       };
   
-      // const response = await fetch(`${BASE_URL}journey/passengers`, option);
-      const response = await fetch(`/journey/passengers`, option);
+      const response = await fetch(`${BASE_URL}journey/passengers`, option);
+      // const response = await fetch(`/journey/passengers`, option);
 
   
       if (!response.ok) {
@@ -343,8 +344,8 @@ function JourneyProvider({ children }) {
         body: JSON.stringify({ ...journey }),
       };
   
-      // const response = await fetch(`${BASE_URL}journey/passengers`, option);
-      const response = await fetch(`/journey/journey-Update`, option);
+      const response = await fetch(`${BASE_URL}journey/passengers`, option);
+      // const response = await fetch(`/journey/journey-Update`, option);
 
   
       if (!response.ok) {

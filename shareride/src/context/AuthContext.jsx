@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 
 const AuthContext = createContext();
 
-// const BASE_URL = "http://localhost:3000/"; // Corrected the URL scheme
+const BASE_URL = "https://shareride-final-year-project-1.onrender.com/"; // Corrected the URL scheme
 // const BASE_URL = "/"; // Corrected the URL scheme
 
 function AuthProvider({ children }) {
@@ -21,8 +21,8 @@ function AuthProvider({ children }) {
     imageUrl = "https://i.pravatar.cc/100?u=zz"
   ) {
     console.log("signup", fullName, phoneNo, password, enrollmentNo);
-    // const Response = await fetch(`${BASE_URL}user/signup`, {
-      const Response = await fetch(`/user/signup`, {
+    const Response = await fetch(`${BASE_URL}user/signup`, {
+      // const Response = await fetch(`/user/signup`, {
 
       method: "POST",
       headers: {
@@ -42,8 +42,8 @@ function AuthProvider({ children }) {
 
   async function login(enrollmentNo, password) {
     const token = localStorage.getItem("token");
-    // const Response = await fetch(`${BASE_URL}user/signin`, {
-      const Response = await fetch(`/user/signin`, {
+    const Response = await fetch(`${BASE_URL}user/signin`, {
+      // const Response = await fetch(`/user/signin`, {
 
       method: "POST",
       // credentials:"include",
@@ -85,8 +85,8 @@ function AuthProvider({ children }) {
         }),
       };
 
-      // const response = await fetch(`${BASE_URL}user/updateProfile`, option);
-      const response = await fetch(`/user/updateProfile`, option);
+      const response = await fetch(`${BASE_URL}user/updateProfile`, option);
+      // const response = await fetch(`/user/updateProfile`, option);
 
 
       if (response.ok) {
@@ -121,8 +121,8 @@ function AuthProvider({ children }) {
         }),
       };
 
-      // const response = await fetch(`${BASE_URL}user/updatePassword`, option);
-      const response = await fetch(`/user/updatePassword`, option);
+      const response = await fetch(`${BASE_URL}user/updatePassword`, option);
+      // const response = await fetch(`/user/updatePassword`, option);
 
 
       if (response.ok) {
@@ -161,7 +161,8 @@ function AuthProvider({ children }) {
     };
   
     try {
-      const response = await fetch('/user/updateProfileImage', option);
+      // const response = await fetch('/user/updateProfileImage', option);
+      const response = await fetch(`${BASE_URL}/user/updateProfileImage`, option);
       if (response.ok) {
         const res = await response.json();
         console.log("res from backend in upload user Image",res);
