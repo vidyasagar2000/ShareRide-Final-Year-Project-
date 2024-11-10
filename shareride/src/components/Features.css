@@ -1,0 +1,48 @@
+.highlights-section {
+  padding: 20px;
+  background-color: #eaf0f6; /* Light background color */
+  border-radius: 10px;
+  /* max-width: 800px; */
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.highlights-title {
+  font-size: 2.5rem;
+  color: #007BFF; /* Blue color */
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.highlights-description {
+  font-size: 1.2rem;
+  color: #333333; /* Dark text color */
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.highlights-content {
+  margin-top: 1.5rem;
+}
+
+.highlights-item {
+  margin-bottom: 1.5rem;
+}
+
+.highlights-heading {
+  font-size: 1.5rem;
+  color: #007BFF; /* Blue color */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.highlights-icon {
+  font-size: 1.8rem;
+  margin-right: 10px;
+}
+
+.highlights-item p {
+  font-size: 1.1rem;
+  color: #333333; /* Dark text color */
+}

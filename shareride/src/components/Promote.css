@@ -1,0 +1,103 @@
+.promote-section {
+  padding: 30px;
+  background-color: #f0f8ff; /* Light Blue Background */
+  border-radius: 12px;
+  /* max-width: 900px; */
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.promote-title {
+  font-size: 2.5rem;
+  color: #007BFF; /* Blue title */
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.promote-intro {
+  font-size: 1.2rem;
+  color: #333333; /* Dark grey for better readability */
+  margin-bottom: 1.5rem;
+}
+
+.promote-content {
+  margin-top: 1.5rem;
+}
+
+.promote-content h3 {
+  font-size: 1.5rem;
+  color: #007BFF; /* Blue for section headers */
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.promote-list {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  font-size: 1.1rem;
+  color: #333333; /* Dark grey text */
+}
+
+.promote-list li {
+  margin-bottom: 0.75rem;
+}
+
+.promote-list strong {
+  color: #20c997; /* Teal for strong emphasis */
+}
+
+.promote-cta {
+  font-size: 1.4rem;
+  color: #007BFF; /* Blue for the CTA */
+  font-weight: bold;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.promote-cta strong {
+  color: #20c997; /* Teal for strong emphasis */
+}
+
+/* Share Section */
+.share-section {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.copy-link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.copy-link-input {
+  background-color: #ffffff;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  color: #333;
+  width: 350px;
+}
+
+.copy-button {
+  background-color: #007BFF; /* Blue for the button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.copy-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.copy-button:active {
+  background-color: #004080; /* Even darker blue when clicked */
+}

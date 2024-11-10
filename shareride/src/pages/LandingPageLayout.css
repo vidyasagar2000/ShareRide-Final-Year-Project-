@@ -1,0 +1,26 @@
+#container{
+  min-height:100vh;
+  overflow: hidden;
+  padding: 0;
+  background-color: black;
+}
+
+#header{
+  width:100%;
+  height:13vh;
+  /* background-color: blue; */
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  background-color: #f5faff;
+  color: #333;
+  overflow-y: scroll; /* Change to 'scroll' */
+  height: 87vh;
+  /* scrollbar-width: none;  */
+}
+
+#main::-webkit-scrollbar {
+  /* display: none;  */
+}

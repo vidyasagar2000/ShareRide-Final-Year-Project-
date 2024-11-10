@@ -1,0 +1,106 @@
+.edit-profile-container {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+#editProfileForm,
+#editPasswordForm {
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 80%;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.updateBtn {
+  display: flex;
+  width: 100%;
+  gap: 10px; /* Optional: adds spacing between the buttons */
+}
+
+#UpdateProfileBtn,
+#UpdatePasswordBtn {
+  flex: 1; /* Equal width for both buttons */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  height: 40px; /* Adjust as needed */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#UpdateProfileBtn {
+  width: 50%;
+  background-color: #007bff;
+}
+
+#UpdatePasswordBtn {
+  width: 50%;
+  background-color: #007bff
+}
+
+#UpdateProfileBtn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+#UpdateProfileBtn:active {
+  background-color: #004085;
+  transform: scale(0.98);
+}
+
+#UpdatePasswordBtn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+#UpdatePasswordBtn:active {
+  background-color:  #004085;
+  transform: scale(0.98);
+}
+
+#updateBtn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+#updateBtn:hover {
+  background-color: #218838;
+}
+
+#updateBtn:active {
+  background-color: #1e7e34;
+}

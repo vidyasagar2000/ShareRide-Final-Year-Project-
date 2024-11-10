@@ -1,0 +1,52 @@
+.terms-section {
+  padding: 20px;
+  background-color: #ffffff; 
+  border-radius: 10px;
+  /* max-width: 800px; */
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.terms-title {
+  font-size: 2.5rem;
+  color: #007BFF; 
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.terms-intro {
+  font-size: 1.2rem;
+  color: #333333; 
+  margin-bottom: 1.5rem;
+}
+
+.terms-content {
+  margin-top: 1.5rem;
+}
+
+.terms-content h3 {
+  font-size: 1.5rem;
+  color: #007BFF; 
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.terms-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 1.1rem;
+  color: #333333; 
+}
+
+.terms-list li {
+  margin-bottom: 0.5rem;
+}
+
+.terms-link {
+  color: #20c997;
+  text-decoration: none;
+}
+
+.terms-link:hover {
+  text-decoration: underline;
+}

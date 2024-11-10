@@ -1,0 +1,199 @@
+.journey-card {
+    background: rgb(232, 232, 232); 
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 300px;
+    margin: 20px auto;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+    position: relative;
+
+}
+
+.journey-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15), 0 8px 10px rgba(0, 0, 0, 0.1); 
+    background-color: rgb(175, 176, 171); 
+    cursor: pointer;
+}
+
+.journey-card h1 {
+    text-align: center;
+    color: #00796b; 
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+.journey-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.location {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    font-size: 1rem;
+    padding: 10px;
+    background-color: #e0f2f1; 
+    border: 1px solid #00796b; 
+    border-radius: 6px;
+    width: 100px; 
+    text-align: center;
+    overflow: hidden;
+
+}
+
+.arrow {
+    position: relative;
+    flex: 1;
+    height: 2px;
+    background-color: #00796b; 
+    margin: 0 15px; 
+}
+
+.arrow::before {
+    content: '';
+    position: absolute;
+    top: -8px; 
+    right: -12px; 
+    border: solid #00796b;
+    border-width: 8px 8px 0 0; 
+    transform: rotate(45deg);
+    width: 0;
+    height: 0;
+}
+
+.arrow::after {
+    content: '';
+    position: absolute;
+    top: -8px; 
+    right: -4px; 
+    border: solid #b2dfdb; 
+    border-width: 8px 8px 0 0; 
+    transform: rotate(45deg);
+    width: 0;
+    height: 0;
+    z-index: 1; 
+}
+
+.journey-info {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    
+}
+
+.fare {
+    margin: 0;
+}
+
+.date-time {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: fit-content;
+    gap: 10px;
+}
+
+.date-time strong {
+    margin-right: 5px;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+
+.join-button  {
+    background-color: #004d40; 
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    width:100%;
+}
+
+.join-button:hover {
+    background-color: #00332b; 
+}
+
+
+.exit-button, .delete-button {
+    background-color: #d32f2f; 
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    width:100%;
+}
+
+.exit-button:hover {
+    background-color: #b71c1c; 
+}
+
+.description {
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    font-size: 1rem;
+    padding: 10px;
+    background-color: #e0f2f1; 
+    border: 1px solid #00796b; 
+    border-radius: 6px;
+    text-align: center;
+    max-height: 350px;
+    overflow: hidden;
+    transition: max-height 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+    margin-bottom: 20px;
+    margin-top: auto;
+}
+
+.description.expanded {
+    word-wrap: break-word;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    max-height: 400px;
+    transition: max-height 0.5s ease, background-color 0.5s ease, border 0.5s ease;
+}
+
+@media (max-width: 768px) {
+    .journey-card {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .join-button, .exit-button {
+        width: 100%;
+        font-size: 1rem;
+        margin: 10px 0; 
+    }
+}

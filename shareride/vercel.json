@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/:path(.*)",
+       "destination": "https://share-ride-s8da.onrender.com/:path"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
+}

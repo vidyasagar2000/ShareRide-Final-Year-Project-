@@ -1,0 +1,258 @@
+.chat-room-container {
+    position: absolute;
+    right: 15px; 
+    z-index: 50000; 
+    bottom: 0;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between; /* Space between name and close button */
+    align-items: center; /* Center vertically */
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Separator line */
+    font-size: 16px;
+    font-weight: bold; /* Bold text for header */
+    background-color: #f1f1f1; /* Light background for the header */
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+}
+
+.avatar-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.chat-header-name {
+    color: #333; /* Dark text color */
+    margin-right: auto;
+}
+
+.close-chat-button {
+    background: none; /* Remove default button styles */
+    border: none;
+    color: #ff4d4d; /* Red color for the close button */
+    font-size: 18px; /* Size for close button */
+    cursor: pointer; /* Change cursor to pointer */
+    margin-left: 10px; /* Space between name and button */
+}
+
+.close-chat-button:hover {
+    color: #ff1a1a; /* Darker red on hover */
+}
+
+.chat-area {
+    width: 350px;
+    height: 70vh;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.messages {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding: 5px;
+}
+
+.message {
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+    position: relative; /* To position timestamp properly */
+}
+
+.my-message {
+    background-color: #dcf8c6; /* Light green for user's messages */
+    align-self: flex-end; /* Align user's messages to the right */
+}
+
+.prabhat-message {
+    background-color: #e6f7ff; /* Light blue for Prabhat's messages */
+    align-self: flex-start; /* Align Prabhat's messages to the left */
+}
+
+.message-user {
+    font-weight: bold;
+    display: inline-block; /* Allows the following elements to be inline */
+}
+
+.message-content {
+    margin-left: 5px;
+}
+
+.message-time {
+    font-size: 0.8em;
+    color: #999;
+    position: absolute; /* Position relative to the message */
+    right: 5px;
+    bottom: 5px;
+}
+
+.chat-input-form {
+    display: flex;
+    margin-top: 10px; /* Space above the input form */
+}
+
+.chat-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px; /* Improved font size for readability */
+}
+
+.send-button {
+    padding: 10px;
+    background-color: #0084ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: background-color 0.3s; /* Add hover effect */
+}
+
+.send-button:hover {
+    background-color: #005bb5; /* Darker shade on hover */
+}
+
+.toggle-chat-button {
+    display: none; /* Initially hide toggle button */
+}
+
+.chat-room-container {
+    position: absolute;
+    right: 15px; 
+    z-index: 50000; 
+    bottom: 0;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between; /* Space between name and close button */
+    align-items: center; /* Center vertically */
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Separator line */
+    font-size: 16px;
+    font-weight: bold; /* Bold text for header */
+    background-color: #f1f1f1; /* Light background for the header */
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+}
+
+.avatar-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.chat-header-name {
+    color: #333; /* Dark text color */
+    margin-right: auto;
+}
+
+.close-chat-button {
+    background: none; /* Remove default button styles */
+    border: none;
+    color: #ff4d4d; /* Red color for the close button */
+    font-size: 18px; /* Size for close button */
+    cursor: pointer; /* Change cursor to pointer */
+    margin-left: 10px; /* Space between name and button */
+}
+
+.close-chat-button:hover {
+    color: #ff1a1a; /* Darker red on hover */
+}
+
+.chat-area {
+    width: 350px;
+    height: 70vh;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* Stack header and messages vertically */
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.messages {
+    overflow-y: auto; /* Enable vertical scrolling */
+    flex-grow: 1; /* Allow messages to grow and fill space */
+    padding: 5px;
+    display: flex;
+    flex-direction: column-reverse; /* Keep the latest messages at the bottom */
+}
+
+.message {
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+    position: relative; /* To position timestamp properly */
+}
+
+.my-message {
+    background-color: #dcf8c6; /* Light green for user's messages */
+    align-self: flex-end; /* Align user's messages to the right */
+}
+
+.prabhat-message {
+    background-color: #e6f7ff; /* Light blue for Prabhat's messages */
+    align-self: flex-start; /* Align Prabhat's messages to the left */
+}
+
+.message-user {
+    font-weight: bold;
+    display: inline-block; /* Allows the following elements to be inline */
+}
+
+.message-content {
+    margin-left: 5px;
+}
+
+.message-time {
+    font-size: 0.8em;
+    color: #999;
+    position: absolute; /* Position relative to the message */
+    right: 5px;
+    bottom: 5px;
+}
+
+.chat-input-form {
+    display: flex;
+    margin-top: 10px; /* Space above the input form */
+}
+
+.chat-input {
+    flex-grow: 1; /* Allow input to grow */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px; /* Improved font size for readability */
+}
+
+.send-button {
+    padding: 10px;
+    background-color: #0084ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: background-color 0.3s; /* Add hover effect */
+}
+
+.send-button:hover {
+    background-color: #005bb5; /* Darker shade on hover */
+}
+
+.toggle-chat-button {
+    display: none; /* Initially hide toggle button */
+}
