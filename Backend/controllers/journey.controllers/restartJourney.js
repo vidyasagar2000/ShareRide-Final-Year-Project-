@@ -2,7 +2,7 @@ const Journey = require("../../models/Journey.models.js");
 
 const restartJourney = async (req, res) => {
   try {
-    console.log("restart journey ",req.body)
+    // console.log("restart journey ",req.body)
     const { fullName, enrollmentNo, _id, phoneNo } = req.user;
     const { _id: journeyId } = req.body;
    

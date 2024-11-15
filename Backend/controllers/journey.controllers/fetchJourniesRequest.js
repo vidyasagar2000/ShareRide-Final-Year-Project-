@@ -3,10 +3,10 @@ const Journey = require("../../models/Journey.models.js");
 
 const fetchJourniesRequests = async (req, res) => {
   try {
-    console.log('journey');
+    // console.log('journey');
     const journeyRequests = await Journey.find().sort({ journeyTime: -1 });
 
-    console.log('journey Founded',journeyRequests);
+    // console.log('journey Founded',journeyRequests);
 
     if (!journeyRequests) {
       return res.status(404).json({ message: "No journey requests found" });

@@ -2,7 +2,7 @@ const { validateToken } = require("../services/authentication");
 
 function checkForAuthenticationCookie(cookieName) {
   return (req, res, next) => {
-    console.log('Auth check in authentication cookies:', req.cookies);
+    // console.log('Auth check in authentication cookies:', req.cookies);
     const tokenCookieValue = req.cookies?.[cookieName] || req.headers.authorization?.split(' ')[1];
     // Ensure you are checking for the correct cookie by its name
 
@@ -15,14 +15,14 @@ function checkForAuthenticationCookie(cookieName) {
 
     req.token=tokenCookieValue;
 
-    console.log('Auth check in authentication headers:', req.token);
+   // console.log('Auth check in authentication headers:', req.token);
     
     try {
       const userPayload = validateToken(tokenCookieValue);  // Assuming this function is available
-      console.log('User payload after token validation:', userPayload);
+      // console.log('User payload after token validation:', userPayload);
       req.user = userPayload._doc || userPayload;  // In case the payload has a different structure
     } catch (error) {
-      console.error('Token validation error:', error);  // Logging validation errors
+      // console.error('Token validation error:', error);  // Logging validation errors
     }
 
     return next();

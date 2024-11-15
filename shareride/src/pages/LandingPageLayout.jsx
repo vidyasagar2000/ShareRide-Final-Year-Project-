@@ -15,9 +15,9 @@ function LandingPageLayout() {
         navigate(location.state);
         return;
       }
-      console.log("login ho raha hai");
+      // console.log("login ho raha hai");
       const token = localStorage.getItem("token");
-      console.log("login ho raha hai ka token", token);
+      // console.log("login ho raha hai ka token", token);
 
       if (token) {
         const result = await login(); // Assuming login returns a result that updates isAuthenticated
@@ -25,11 +25,11 @@ function LandingPageLayout() {
 
         if (isAuthenticated) {
           // Ensure that isAuthenticated is updated properly
-          console.log(
-            "isNowAuthenticated in login ho raha hai",
-            isAuthenticated
-          );
-          console.log("location in url", location);
+          // console.log(
+          //   "isNowAuthenticated in login ho raha hai",
+          //   isAuthenticated
+          // );
+          // console.log("location in url", location);
 
           // navigate(location.state);
           navigate("/dashboard");

@@ -5,8 +5,8 @@ import { useAuth } from "./AuthContext";
 
 const JourneyContext = createContext();
 
-// const BASE_URL = "http://localhost:3000/"; // Corrected the URL scheme
-const BASE_URL = "https://shareride-final-year-project-1.onrender.com/"; 
+const BASE_URL = "http://localhost:3000/"; // Corrected the URL scheme
+// const BASE_URL = "https://shareride-final-year-project-1.onrender.com/"; 
 // const BASE_URL = "/"; // Corrected the URL scheme
 
 function JourneyProvider({ children }) {

@@ -71,7 +71,7 @@ const updatePassword = async (req, res) => {
     // Find the user by ID
     const user = await User.findById(_id);
     if (!user) {
-      console.log('!user in update password', user);
+      // console.log('!user in update password', user);
       return res.status(404).json({ message: 'User not found' });
     }
 
@@ -133,7 +133,7 @@ const updatePassword = async (req, res) => {
 
 const updateProfileImage = async (req, res, next) => {
   try {
-    console.log("Uploaded files: ", req.files); // This should show the file info
+    // console.log("Uploaded files: ", req.files); // This should show the file info
 
     if (!req.files || !req.files.userProfileImage) {
       throw new APIError(400, 'No image file was provided');

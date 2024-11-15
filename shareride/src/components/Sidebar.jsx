@@ -63,13 +63,6 @@ function Sidebar() {
     <>
       <nav className="bg-[#f7f7f8] h-screen fixed top-0 left-0 min-w-[250px] py-14 px-4 font-[sans-serif]">
         <div className="relative">
-          {/* <a href="javascript:void(0)">
-            <img
-              src="https://readymadeui.com/readymadeui.svg"
-              alt="logo"
-              className="w-[160px]"
-            />
-          </a> */}
           <div className="absolute -right-6 top-2 h-6 w-6 p-[6px] cursor-pointer bg-[#007bff] flex items-center justify-center rounded-full">
             <svg
               xmlns="http://www.w3.org/2000/svg"

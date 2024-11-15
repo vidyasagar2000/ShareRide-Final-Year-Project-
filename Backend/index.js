@@ -24,7 +24,7 @@ app.use(cors({
   credentials: true,
 }));
 const dataBaseUrl = process.env.DATABASE_URL;
-console.log(dataBaseUrl);
+// console.log(dataBaseUrl);
 connectToMongoDB(dataBaseUrl).then(() => {
   app.on('error', (error) => {
     console.error('Express is not able to talk to the database. Error:', error);
@@ -59,13 +59,13 @@ const io = new Server(server, {
   }
 });
 
-console.log('Socket server initialized');
+// console.log('Socket server initialized');
 
 io.on('connection', (socket) => {
-  console.log('A user connected:', socket.id);
+  // console.log('A user connected:', socket.id);
   userMessage(socket, io);
   socket.on('disconnect', () => {
-    console.log('A user disconnected:', socket.id);
+    // console.log('A user disconnected:', socket.id);
   });
 });
 

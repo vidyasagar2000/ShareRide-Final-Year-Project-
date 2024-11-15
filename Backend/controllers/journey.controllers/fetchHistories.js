@@ -4,7 +4,7 @@ const Journey = require("../../models/Journey.models.js");
 const fetchRideHistories = async (req, res) => {
   try {
     const { fullName, enrollmentNo, _id, phoneNo } = req.user;
-    console.log("Fetching histories for user:", _id);
+    // console.log("Fetching histories for user:", _id);
 
     const rideHistories = await Journey.aggregate([
       {
@@ -19,7 +19,7 @@ const fetchRideHistories = async (req, res) => {
       },
     ]);
 
-    console.log("Ride histories found:", rideHistories);
+    // console.log("Ride histories found:", rideHistories);
 
     if (!rideHistories) {
       return res.status(404).json({ message: "No journey history found." });

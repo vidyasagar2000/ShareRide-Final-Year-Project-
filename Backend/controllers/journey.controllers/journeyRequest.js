@@ -32,7 +32,7 @@ const journeyRequest=async (req,res)=>{
             throw new Error(400, 'All fields are required');
         } 
        
-        console.log('journeyRequestFucn',req.body,userId);
+        // console.log('journeyRequestFucn',req.body,userId);
         passengerRequired--;
         let status='required'
         if(passengerRequired===0){
@@ -55,7 +55,7 @@ const journeyRequest=async (req,res)=>{
         });
         
           
-        console.log(newJourneyRequest)
+        // console.log(newJourneyRequest)
     
         if (!newJourneyRequest) {
             throw new Error(502, 'Unable to create journey request');
@@ -64,7 +64,7 @@ const journeyRequest=async (req,res)=>{
         
         res.status(200).json(newJourneyRequest);
     } catch (error) {
-        console.log("error:",error)
+        // console.log("error:",error)
         res.status(500).json({ message: "Server error" });
       }
 }

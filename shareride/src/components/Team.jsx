@@ -6,7 +6,7 @@ const Team = () => {
     <>
       {/* <Header /> */}
       <section className="team-section">
-        <h2 className="team-title">Meet the Team Behind Share-Ride</h2>
+        <h2 className="team-title">Under the supervision of Dr. Mrinal Kanti Debbarma Sir</h2>
 
         <p className="team-intro">
           <strong>Share-Ride</strong> is powered by a dedicated team committed
@@ -16,7 +16,7 @@ const Team = () => {
 
         <div className="team-content">
           <div className="team-member">
-            <h3 className="team-member-name">Vidya Sagar (Leader)</h3>
+            <h3 className="team-member-name">Member 1 : Vidya Sagar</h3>
             <p className="team-member-contact">
               <strong>Phone:</strong> +91 6201427621
             </p>
@@ -31,14 +31,14 @@ const Team = () => {
             </p>
           </div>
           <div className="team-member">
-            <h3 className="team-member-name">Mohit Pal (Assistant)</h3>
+            <h3 className="team-member-name">Member 2 : Mohit Pal</h3>
             <p className="team-member-contact">
-              <strong>Phone:</strong> +91 9876543210
+              <strong>Phone:</strong> +91 9811424101
             </p>
             <p className="team-member-contact">
               <strong>Email:</strong>{" "}
               <a
-                href="mailto:ohoomohit@gmail.com"
+                href="mailto:oohomohit@gmail.com"
                 className="team-member-link"
               >
                 ohoomohit@gmail.com

@@ -18,7 +18,7 @@ const userMessage = (socket, io) => {
             }
 
             socketId[userId] = socket.id;
-            console.log(`User ${userId} joined room with socket ID ${socket.id}`);
+            // console.log(`User ${userId} joined room with socket ID ${socket.id}`);
         } catch (error) {
             console.error(error.message);
             socket.emit('error', { message: error.message });
@@ -33,7 +33,7 @@ const userMessage = (socket, io) => {
 
             // Validate that all required fields are present
             if (![from, fromId, content, to, toId, timestamp].every(field => field && field.trim() !== '')) {
-                console.log("failed sending",message)
+                // console.log("failed sending",message)
                 throw new Error("All fields are required and must not be empty.");
             }
 
@@ -112,13 +112,13 @@ const userMessage = (socket, io) => {
     socket.on('close-chat',({user1,user2})=>{
         const room=[user1,user2].sort().join('-');
         socket.leave(room);
-        console.log(`Socket ${socket.id} left room ${room}`);
+        // console.log(`Socket ${socket.id} left room ${room}`);
     })
     // Handle user leaving room
     socket.on("leaveRoom", (userId) => {
         if (socketId[userId] === socket.id) {
             delete socketId[userId];
-            console.log(`User ${userId} left the room.`);
+            // console.log(`User ${userId} left the room.`);
         }
     });
 
@@ -127,7 +127,7 @@ const userMessage = (socket, io) => {
         for (const userId in socketId) {
             if (socketId[userId] === socket.id) {
                 delete socketId[userId];  // Remove user from socketId map
-                console.log(`User ${userId} disconnected.`);
+                // console.log(`User ${userId} disconnected.`);
                 break;
             }
         }

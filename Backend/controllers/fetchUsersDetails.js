@@ -3,7 +3,7 @@ const User = require("../models/user.models.js");
 
 const fetchUserDetails = async (req, res) => {
   const { users } = req.body;  // Correctly access req.body
-  console.log("Fetch users details ", req.body);
+  // console.log("Fetch users details ", req.body);
 
   if (!users || users.length === 0) {
     return res.status(400).json({ message: "No user id provided" });
@@ -23,7 +23,7 @@ const fetchUserDetails = async (req, res) => {
       },
     ]);
 
-    console.log("userdetails", userDetails);
+    // console.log("userdetails", userDetails);
 
     if (userDetails.length === 0) {
       return res.status(404).json({ message: "No users found" });

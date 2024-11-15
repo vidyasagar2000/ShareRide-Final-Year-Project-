@@ -7,8 +7,8 @@ const { upload } = require("../middlewares/multer.middlewares.js");
 
 router.route("/signup").post(async (req, res) => {
   try {
-    const { fullName, password, phoneNo, enrollmentNo } = req.body;
-    console.log("signup request", req.body);
+    const { fullName, password, phoneNo, enrollmentNo } = req?.body;
+    // console.log("signup request", req.body);
 
     let existingUser = await User.findOne({
       $or: [{ phoneNo }, { enrollmentNo }],
@@ -28,12 +28,12 @@ router.route("/signup").post(async (req, res) => {
       enrollmentNo: enrollmentNo.trim().toLowerCase(),
     });
 
-    console.log("User:", user);
+    // console.log("User:", user);
 
     if (!user) {
       return res.status(500).json({ message: "Internal Server Error" });
     }
-    console.log("User successfully created");
+    // console.log("User successfully created");
     res.status(201).json(user);
   } catch (error) {
     console.error("Error during signup:", error);
@@ -44,32 +44,34 @@ router.route("/signup").post(async (req, res) => {
 });
 
 router.route("/signin").post(async (req, res) => {
+  
   const { enrollmentNo, password } = req.body;
   // const {fullName, enrollmentNo, _id, phoneNo}=req.user;
   // console.log("signInrequest", req.body);
   // console.log("userExistedBefore",req.user);
-  if(!enrollmentNo && !password && req.token ){
-    const {fullName,_id, phoneNo}=req.user;
+  if (!enrollmentNo && !password && req.token) {
+    // console.log("req.user1", req.user);
+    const { _id } = req.user;
     const userInDb = await User.findById(_id).select(
       "-password -salt"
     );
 
-   
-    if(!userInDb){
-      return res.status(400).json({msg:"Please Login First"});
+
+    if (!userInDb) {
+      return res.status(400).json({ msg: "Please Login First" });
     }
 
-    console.log("userExistedBefore indb",userInDb);
+    // console.log("userExistedBefore indb",userInDb);
 
-    if(!req?.user?.fullName===userInDb.fullName || !req?.user?._id===userInDb._id || !req?.user?.phoneNo=== userInDb.phoneNo || !req?.user?.enrollmentNo.toLowerCase()===userInDb.enrollmentNo.toLowerCase() ){
-      return res.status(400).json({msg:"Please Login First"});
+    if (!req?.user?.fullName === userInDb.fullName || !req?.user?._id === userInDb._id || !req?.user?.phoneNo === userInDb.phoneNo || !req?.user?.enrollmentNo.toLowerCase() === userInDb.enrollmentNo.toLowerCase()) {
+      return res.status(400).json({ msg: "Please Login First" });
     }
-    const token= req.token;
+    const token = req.token;
 
-    console.log("prev token of prev login",token);
-    if(!token) return res.status(400).json({msg:"Please Login First"});
+    // console.log("prev token of prev login",token);
+    if (!token) return res.status(400).json({ msg: "Please Login First" });
 
-    console.log("login hua")
+    // console.log("login hua")
     return res.cookie("token", token, { httpOnly: true, secure: true }).json({
       success: true,
       msg: "Successfully SignedIn",
@@ -79,18 +81,18 @@ router.route("/signin").post(async (req, res) => {
 
   }
 
-  
+
   try {
     const token = await User.matchPasswordAndGenerateToken(
       enrollmentNo.toLowerCase(),
       password
     );
 
-    const userInDb = await User.findOne({ enrollmentNo:enrollmentNo.toLowerCase() }).select(
+    const userInDb = await User.findOne({ enrollmentNo: enrollmentNo.toLowerCase() }).select(
       "-password -salt"
     );
 
-    console.log("login hua")
+    // console.log("login hua")
 
     return res.cookie("token", token, { httpOnly: true, secure: true }).json({
       success: true,

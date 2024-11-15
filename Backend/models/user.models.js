@@ -41,9 +41,9 @@ const userSchema = new mongoose.Schema(
 userSchema.pre("save", function (next) {
   const user = this;
   if (!user.isModified("password")) return;
-  console.log("hng");
+  // console.log("hng");
   const salt = crypto.randomBytes(16).toString();
-  console.log("hng");
+  // console.log("hng");
 
   const hashedPassword = createHmac("sha256", salt)
     .update(user.password)
@@ -58,10 +58,10 @@ userSchema.pre("save", function (next) {
 userSchema.static(
   "matchPasswordAndGenerateToken",
   async function (enrollmentNo, password) {
-    console.log("auth",enrollmentNo)
+    // console.log("auth",enrollmentNo)
     const user = await this.findOne({ enrollmentNo });
-    console.log(user);
-    console.log("enrollment no", enrollmentNo);
+    // console.log(user);
+    // console.log("enrollment no", enrollmentNo);
     if (!user) throw new Error("User not found with this enrollmentNo");
     const salt = user.salt;
     const hashedPassword = user.password;
@@ -72,9 +72,9 @@ userSchema.static(
     if (hashedPassword !== providedPassword) {
       throw new Error("Incorrect Password");
     }
-    console.log("token grnerating")
+    // console.log("token grnerating")
     const token = createTokenForUser(user);
-    console.log(token)
+    // console.log(token)
     return token;
   }
 );

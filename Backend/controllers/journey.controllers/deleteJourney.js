@@ -17,8 +17,8 @@ const deleteJourney = async (req, res) => {
     
 
     if (journeyInDb?.userId?.toString() !== userId?.toString()) {
-      console.log('journeyInDb?.userId', journeyInDb?.userId)
-      console.log('userId',userId)
+      // console.log('journeyInDb?.userId', journeyInDb?.userId)
+      // console.log('userId',userId)
       throw new Error(400, "user not authorised to delete this journey");
     }
 
