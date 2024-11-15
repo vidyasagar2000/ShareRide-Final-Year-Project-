@@ -33,19 +33,18 @@ const journeyRequest=async (req,res)=>{
         } 
        
         // console.log('journeyRequestFucn',req.body,userId);
-        passengerRequired--;
         let status='required'
         if(passengerRequired===0){
             status='full'
         }
         const newJourneyRequest = await Journey.create({
             userId,
-            enrollmentNo: enrollmentNo.trim().toLowerCase(),
-            fullName: fullName.trim().toLowerCase(),
-            phoneNo: phoneNo.trim().toLowerCase(),
+            enrollmentNo: enrollmentNo.trim(),
+            fullName: fullName.trim(),
+            phoneNo: phoneNo.trim(),
             passengerRequired,
-            journeyStartLocation: journeyStartLocation.trim().toLowerCase(),
-            journeyEndLocation: journeyEndLocation.trim().toLowerCase(),
+            journeyStartLocation: journeyStartLocation.trim(),
+            journeyEndLocation: journeyEndLocation.trim(),
             passengers: [userId],
             journeyDescription,
             journeyDate,
