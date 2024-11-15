@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./JourneyCard.css";
 import { useAuth } from "../context/AuthContext";
 import { useJourney } from "../context/JourneyContext";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 import {  useNavigate } from "react-router-dom";
 import { usePopUp } from "../context/PopUpContext";
 
@@ -11,7 +11,7 @@ const JourneyCard = ({ journey }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { user } = useAuth();
   const { deleteJourneyInfo, joinJourney, exitJourney } = useJourney();
-  const {setPopUPMessage,setIsPopUPVisible,setOnYesFunc,isOnYesFucSuccessful,SetIsOnYesFucSuccessful}=usePopUp();
+  const {setPopUPMessage,setIsPopUPVisible,setOnYesFunc,SetIsOnYesFucSuccessful}=usePopUp();
 
   const navigate = useNavigate();
   // const location = useLocation();

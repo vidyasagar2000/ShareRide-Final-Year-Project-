@@ -268,7 +268,7 @@ function MyJourneyForm() {
           </div>
 
           {/* Editable Fare for Admin */}
-          {journey.isAdmin && (
+          
             <div className="mb-4 sm:mb-6 text-gray-700 font-semibold">
               <label htmlFor="fare" className="text-lg">
                 Overall Fare: ₹
@@ -276,12 +276,13 @@ function MyJourneyForm() {
               <input
                 id="fare"
                 type="number"
+                disabled={!journey?.isAdmin}
                 value={journey.fare}
                 onChange={handleFareChange}
                 className="ml-2 px-2 sm:px-4 py-1 sm:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
               />
             </div>
-          )}
+          
 
           {/* Fare Per Head */}
           <div className="mb-4 sm:mb-6 text-gray-700 font-semibold">
@@ -298,35 +299,37 @@ function MyJourneyForm() {
           </div>
 
           {/* Passenger Requirement for Admin */}
-          {journey.isAdmin && (
-            <div className="mb-4 sm:mb-6 text-gray-700 font-semibold">
-              <label htmlFor="requiredPassengers" className="text-lg">
-                Total Passengers Required:{" "}
-              </label>
-              <input
-                id="requiredPassengers"
-                type="number"
-                value={journey.passengerRequired}
-                onChange={handlePassengerRequirementChange}
-                className="ml-2 px-2 sm:px-4 py-1 sm:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
-              />
-            </div>
-          )}
 
-          {journey?.isAdmin && (
-            <div className="mb-4 sm:mb-6 text-gray-700 font-semibold">
-              <label htmlFor="journeyDescription" className="text-lg">
-                Description :{" "}
-              </label>
-              <input
-                id="journeyDescription"
-                type="text"
-                value={journey?.journeyDescription}
-                onChange={handleDescriptionChange}
-                className="ml-2 px-2 sm:px-4 py-1 sm:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
-              />
-            </div>
-          )}
+          <div className="mb-4 sm:mb-6 text-gray-700 font-semibold">
+            <label htmlFor="requiredPassengers" className="text-lg">
+              Total Passengers Required:{" "}
+            </label>
+            <input
+              id="requiredPassengers"
+              type="number"
+              disabled={!journey?.isAdmin}
+              value={journey.passengerRequired}
+              onChange={handlePassengerRequirementChange}
+              className="ml-2 px-2 sm:px-4 py-1 sm:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
+            />
+          </div>
+
+
+
+          <div className="mb-4 sm:mb-6 text-gray-700 font-semibold">
+            <label htmlFor="journeyDescription" className="text-lg">
+              Description :{" "}
+            </label>
+            <input
+              id="journeyDescription"
+              type="text"
+              disabled={!journey?.isAdmin}
+              value={journey?.journeyDescription}
+              onChange={handleDescriptionChange}
+              className="ml-2 px-2 sm:px-4 py-1 sm:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
+            />
+          </div>
+
 
           {/* Passenger Details */}
           <div className="mb-4">

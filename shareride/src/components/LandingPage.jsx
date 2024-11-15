@@ -3,9 +3,12 @@ import "./LandingPage.css";
 
 import Footer from "./Footer"
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 
 function LandingPage() {
+
+  const {isAuthenticated} = useAuth();
   
   const navigate = useNavigate();
   
@@ -24,7 +27,7 @@ function LandingPage() {
             A smarter way to travel. Connect with co-travelers, reduce your
             travel costs, and enjoy the journey together!
           </p>
-          <a className="intro-button"
+          <a className="intro-button cursor-pointer"
             onClick={handleLoginClick}
           >
             Start Your Journey
@@ -71,9 +74,9 @@ function LandingPage() {
             Sign up now and join the Share-Ride community to start saving on
             your travel costs!
           </p>
-          <a href="/signup" className="cta-button">
+         {!isAuthenticated && <a href="/signup" className="cta-button">
             Join Share-Ride
-          </a>
+          </a>}
         </div>
         
       </section>
