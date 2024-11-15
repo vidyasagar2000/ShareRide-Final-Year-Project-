@@ -4,9 +4,9 @@ import toast from "react-hot-toast";
 
 const AuthContext = createContext();
 
-// const BASE_URL = "https://shareride-final-year-project-1.onrender.com/"; // Corrected the URL scheme
+const BASE_URL = "https://shareride-final-year-project-1.onrender.com/"; // Corrected the URL scheme
 // const BASE_URL = "/"; // Corrected the URL scheme
-const BASE_URL = "http://localhost:3000/";
+// const BASE_URL = "http://localhost:3000/";
 
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null);

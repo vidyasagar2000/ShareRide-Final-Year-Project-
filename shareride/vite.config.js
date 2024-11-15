@@ -20,8 +20,8 @@ export default defineConfig({
       // https://share-ride-s8da.onrender.com/
       //  '/user': 'https://share-ride-s8da.onrender.com',
       // '/journey': 'https://share-ride-s8da.onrender.com'
-      // '/user': 'https://shareride-final-year-project-1.onrender.com',
-      // '/journey': 'https://shareride-final-year-project-1.onrender.com'
+      '/user': 'https://shareride-final-year-project-1.onrender.com',
+      '/journey': 'https://shareride-final-year-project-1.onrender.com'
       // '/user': 'http://localhost:3000/',
       // // http://localhost:5173/
       // '/journey': 'http://localhost:3000/'
