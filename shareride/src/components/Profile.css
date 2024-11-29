@@ -306,11 +306,10 @@
 }
 
 @media (max-width: 480px) {
-  *{
-    justify-content: center;
-  }
+  
   .profile-container {
     padding: 10px;
+    justify-content: center;
   }
 
   .profile-header {

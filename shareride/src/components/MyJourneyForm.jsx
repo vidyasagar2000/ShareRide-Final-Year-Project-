@@ -292,7 +292,7 @@ function MyJourneyForm() {
             <input
               id="farePerHead"
               type="number"
-              value={journey.fare / journey.passengers.length}
+              value={(journey.fare / journey.passengers.length).toFixed(2)}
               readOnly
               className="ml-2 px-2 sm:px-4 py-1 sm:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 pointer-events-none"
             />
@@ -370,7 +370,7 @@ function MyJourneyForm() {
                           </button>
                         )}
                       {passenger._id !== user._id && <div
-                        className="chat-with"
+                        className="chat-with cursor-pointer"
                         style={{
                           display: "inline-flex",
                           alignItems: "center",

@@ -218,7 +218,7 @@ function Header({toggleSidebar}) {
             </button>
           )}
           {isAuthenticated && (<button id="toggleOpen"
-            // className="lg:hidden"
+            className="lg:hidden"
             onClick={(e)=>handleSideBarToggle(e)}
           >
             <svg

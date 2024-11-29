@@ -77,8 +77,8 @@ function Sidebar() {
             </svg>
           </div>
         </div>
-        <div className="overflow-auto py-6 h-full mt-4">
-          <ul className="space-y-1">
+        <div className="overflow-auto py-6 h-full mt-8">
+          <ul className="">
             <li>
               <a
                 href="javascript:void(0)"

@@ -255,7 +255,7 @@ function FilterComponent({ journeys, setJourneys, showStatus = true }) {
                       onChange={() => handleFilterToggle(filter)}
                       className="form-checkbox"
                     />
-                    <span className="ml-2 text-sm font-medium text-gray-700 dark:text-gray-200">
+                    <span className="ml-2 text-sm font-medium">
                       {filter.charAt(0).toUpperCase() + filter.slice(1)}
                     </span>
                   </label>
@@ -274,7 +274,7 @@ function FilterComponent({ journeys, setJourneys, showStatus = true }) {
                           onChange={() => handleLocationFilterToggle(type)}
                           className="form-checkbox"
                         />
-                        <span className="ml-2 text-sm font-medium text-gray-700 dark:text-gray-200">
+                        <span className="ml-2 text-sm font-medium">
                           {type === "location"
                             ? "Location"
                             : type === "fromLocation"
@@ -289,7 +289,7 @@ function FilterComponent({ journeys, setJourneys, showStatus = true }) {
                     <>
                       <label
                         htmlFor="location-name"
-                        className="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                        className="block text-sm font-medium"
                       >
                         Location
                       </label>
@@ -308,7 +308,7 @@ function FilterComponent({ journeys, setJourneys, showStatus = true }) {
                     <>
                       <label
                         htmlFor="start-location"
-                        className="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                        className="block text-sm font-medium"
                       >
                         From Location
                       </label>
@@ -317,7 +317,7 @@ function FilterComponent({ journeys, setJourneys, showStatus = true }) {
                         id="start-location"
                         value={startLocation}
                         onChange={(e) => setStartLocation(e.target.value)}
-                        className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+                        className="block p-2.5 w-full text-sm  bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
                         placeholder="Enter start location"
                       />
                     </>
@@ -327,7 +327,7 @@ function FilterComponent({ journeys, setJourneys, showStatus = true }) {
                     <>
                       <label
                         htmlFor="end-location"
-                        className="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                        className="block text-sm font-medium"
                       >
                         To Location
                       </label>
@@ -372,7 +372,7 @@ function FilterComponent({ journeys, setJourneys, showStatus = true }) {
                 <div className="my-2">
                   <label
                     htmlFor="start-date"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                    className="block text-sm font-medium "
                   >
                     Start Date
                   </label>
@@ -385,7 +385,7 @@ function FilterComponent({ journeys, setJourneys, showStatus = true }) {
                   />
                   <label
                     htmlFor="end-date"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                    className="block text-sm font-medium"
                   >
                     End Date
                   </label>

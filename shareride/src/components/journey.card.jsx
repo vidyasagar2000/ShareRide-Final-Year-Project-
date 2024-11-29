@@ -4,14 +4,14 @@ import "./JourneyCard.css";
 import { useAuth } from "../context/AuthContext";
 import { useJourney } from "../context/JourneyContext";
 // import toast from "react-hot-toast";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { usePopUp } from "../context/PopUpContext";
 
 const JourneyCard = ({ journey }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { user } = useAuth();
   const { deleteJourneyInfo, joinJourney, exitJourney } = useJourney();
-  const {setPopUPMessage,setIsPopUPVisible,setOnYesFunc,SetIsOnYesFucSuccessful}=usePopUp();
+  const { setPopUPMessage, setIsPopUPVisible, setOnYesFunc, SetIsOnYesFucSuccessful } = usePopUp();
 
   const navigate = useNavigate();
   // const location = useLocation();
@@ -21,7 +21,7 @@ const JourneyCard = ({ journey }) => {
   );
 
   const handleOpenDesc = (e) => {
-    e.stopPropagation(); 
+    e.stopPropagation();
     if (journey?.journeyDescription.length < 28) {
       return;
     }
@@ -29,11 +29,11 @@ const JourneyCard = ({ journey }) => {
   };
 
   const handleDeleteJourney = (e) => {
-    e.stopPropagation(); 
+    e.stopPropagation();
     if (journey?.userId !== user?._id) {
       return;
     }
-    
+
     setPopUPMessage("DO YOU REALLY WANT TO DELETE THE JOURNEY");
     setOnYesFunc(() => () => deleteJourneyInfo(journey?._id));
     setIsPopUPVisible(true);
@@ -44,8 +44,8 @@ const JourneyCard = ({ journey }) => {
   };
 
   const handleExitJourney = (e) => {
-    e.stopPropagation(); 
-  
+    e.stopPropagation();
+
     setPopUPMessage("DO YOU REALLY WANT TO EXIT FROM JOURNEY");
     setOnYesFunc(() => () => exitJourney(journey?._id) && setIsJourneyJoined(false));
     setIsPopUPVisible(true);
@@ -54,25 +54,25 @@ const JourneyCard = ({ journey }) => {
   };
 
   const handleJoinJourney = (e) => {
-    e.stopPropagation(); 
+    e.stopPropagation();
 
     // joinJourney(journey?._id);
     setPopUPMessage("DO YOU REALLY WANT TO JOIN JOURNEY");
     setOnYesFunc(() => () => joinJourney(journey?._id) && setIsJourneyJoined(true));
-     setIsPopUPVisible(true);
-     SetIsOnYesFucSuccessful(null);
+    setIsPopUPVisible(true);
+    SetIsOnYesFucSuccessful(null);
     //  if(isOnYesFucSuccessful){
     //   setIsJourneyJoined(true);
     //   toast.success("Successfully joined journey item");
     //   SetIsOnYesFucSuccessful(null);
     // }
   };
-  
+
 
   const handleCardOpenClick = () => {
     console.log("handleCardOpenClick clicked")
     if (!journey.passengers.includes(user?._id)) return;
-    navigate(`/app/journey-form`, {state:journey})
+    navigate(`/app/journey-form`, { state: journey })
   }
 
   return (
@@ -89,27 +89,32 @@ const JourneyCard = ({ journey }) => {
 
       <div className="journey-info">
         <div>
-          <strong>Date:</strong> {journey?.journeyDate?.split('T')[0]}
+          <strong>Date:</strong>{' '}
+          {new Date(journey?.journeyDate).toLocaleDateString('en-GB', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric',
+          })}
         </div>
+
         <div>
           <strong>Time:</strong> {journey?.journeyTime}
         </div>
       </div>
 
-      
+
       <p className="relative">
         <strong>Total joined:</strong> {journey?.passengers?.length || 0}
         <div className="absolute right-0 top-1">
           <span
-            className={`bg-blue-600 text-white px-3 py-1 rounded-full text-sm ${
-              journey?.status === "cancelled" ? "bg-red-600" : ""
-            }`}
+            className={`bg-blue-600 text-white px-3 py-1 rounded-full text-sm ${journey?.status === "cancelled" ? "bg-red-600" : ""
+              }`}
           >
             {journey?.status === "full"
               ? "completed"
               : journey?.status === "cancelled"
-              ? "cancelled"
-              : "incomplete"}
+                ? "cancelled"
+                : "incomplete"}
           </span>
         </div>
       </p>

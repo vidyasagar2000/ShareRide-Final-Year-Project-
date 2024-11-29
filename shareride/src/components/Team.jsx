@@ -6,7 +6,7 @@ const Team = () => {
     <>
       {/* <Header /> */}
       <section className="team-section">
-        <h2 className="team-title">Under the supervision of Dr. Mrinal Kanti Debbarma Sir</h2>
+        <h2 className="team-title">Under the supervision of Prof. Mrinal Kanti Deb Barma Sir</h2>
 
         <p className="team-intro">
           <strong>Share-Ride</strong> is powered by a dedicated team committed
@@ -41,7 +41,7 @@ const Team = () => {
                 href="mailto:oohomohit@gmail.com"
                 className="team-member-link"
               >
-                ohoomohit@gmail.com
+                oohomohit@gmail.com
               </a>
             </p>
           </div>
