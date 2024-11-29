@@ -259,13 +259,13 @@
 .EditProfileContainer{
   min-width:100%;
 }
-/*
+
 /* Responsive styles (for smaller screens) */
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .profile-container {
     padding: 15px;
     flex-direction: column; /* Stack content vertically on smaller screens */
-  /* }
+ }
 
   .profile-header {
     margin-bottom: 15px;
@@ -306,6 +306,9 @@
 }
 
 @media (max-width: 480px) {
+  *{
+    justify-content: center;
+  }
   .profile-container {
     padding: 10px;
   }
@@ -345,5 +348,5 @@
 
   .journey-container {
     width: 100%;
-  }
-/* } */ 
+  } 
+}

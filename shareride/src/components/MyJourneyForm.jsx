@@ -350,7 +350,7 @@ function MyJourneyForm() {
                       <FaUser className="text-green-600" />
                       <div>
                         <p className="text-sm font-semibold text-gray-700">
-                          {passenger?.fullName.toUpperCase()}
+                          {passenger?.fullName.toUpperCase()}{passenger._id===journey.userId ? " (Admin)":""}
                         </p>
                         <p className="text-xs sm:text-sm text-gray-500">
                           Enrollment: {passenger?.enrollmentNo.toUpperCase()}
@@ -369,7 +369,7 @@ function MyJourneyForm() {
                             Remove
                           </button>
                         )}
-                      <div
+                      {passenger._id !== user._id && <div
                         className="chat-with"
                         style={{
                           display: "inline-flex",
@@ -397,7 +397,7 @@ function MyJourneyForm() {
                           <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
                           <path d="M3 9l9 6 9-6V4a2 2 0 00-2-2H5a2 2 0 00-2 2v5z" />
                         </svg>
-                      </div>
+                      </div>}
                     </div>
                   </div>
                 ))}
