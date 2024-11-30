@@ -162,7 +162,7 @@ function AuthProvider({ children }) {
   
     try {
       // const response = await fetch('/user/updateProfileImage', option);
-      const response = await fetch(`${BASE_URL}/user/updateProfileImage`, option);
+      const response = await fetch(`${BASE_URL}user/updateProfileImage`, option);
       if (response.ok) {
         const res = await response.json();
         console.log("res from backend in upload user Image",res);

@@ -266,7 +266,12 @@ function MyJourneyForm() {
               </span>
             </p>
           </div>
-
+          <div className="mb-4 sm:mb-6 text-gray-700 font-semibold">
+              <label htmlFor="fare" className="text-lg">
+                Passengers Joined: <span className="text-green-700">{journey.passengers.length}</span>
+              </label>
+              
+            </div>
           {/* Editable Fare for Admin */}
           
             <div className="mb-4 sm:mb-6 text-gray-700 font-semibold">
